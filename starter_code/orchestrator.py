@@ -6,7 +6,12 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 RAW_DATA_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), "raw_data")
 
+<<<<<<< HEAD
 # Import các thành phần dựa trên code bạn đã cung cấp
+=======
+
+# Import role-specific modules
+>>>>>>> origin/main
 from schema import UnifiedDocument
 from process_pdf import extract_pdf_data
 from process_transcript import clean_transcript
@@ -18,12 +23,20 @@ from quality_check import run_quality_gate
 # ==========================================
 # ROLE 4: DEVOPS & INTEGRATION SPECIALIST
 # ==========================================
+<<<<<<< HEAD
+=======
+# Task: Orchestrate the ingestion pipeline and handle errors/SLA.
+>>>>>>> origin/main
 
 def main():
     start_time = time.time()
     final_kb = []
     
+<<<<<<< HEAD
     # --- FILE PATH SETUP ---
+=======
+    # --- FILE PATH SETUP (Handled for students) ---
+>>>>>>> origin/main
     pdf_path = os.path.join(RAW_DATA_DIR, "lecture_notes.pdf")
     trans_path = os.path.join(RAW_DATA_DIR, "demo_transcript.txt")
     html_path = os.path.join(RAW_DATA_DIR, "product_catalog.html")
@@ -31,6 +44,7 @@ def main():
     code_path = os.path.join(RAW_DATA_DIR, "legacy_pipeline.py")
     
     output_path = os.path.join(os.path.dirname(SCRIPT_DIR), "processed_knowledge_base.json")
+<<<<<<< HEAD
 
     # Danh sách các tác vụ cần xử lý: (hàm_xử_lý, đường_dẫn_file, tên_loại)
     processing_tasks = [
@@ -75,6 +89,18 @@ def main():
         print(f"\n--- Output saved to: {output_path} ---")
     except Exception as e:
         print(f"Error saving output file: {e}")
+=======
+    # ----------------------------------------------
+
+    # TODO: Call each processing function (extract_pdf_data, clean_transcript, etc.)
+    # TODO: Run quality gates (run_quality_gate) before adding to final_kb
+    # TODO: Save final_kb to output_path using json.dump
+    
+    # Example:
+    # doc = extract_pdf_data(pdf_path)
+    # if doc and run_quality_gate(doc):
+    #     final_kb.append(doc)
+>>>>>>> origin/main
 
     end_time = time.time()
     print(f"Pipeline finished in {end_time - start_time:.2f} seconds.")
@@ -82,4 +108,8 @@ def main():
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> origin/main

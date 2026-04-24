@@ -1,5 +1,9 @@
 from pydantic import BaseModel, Field
+<<<<<<< HEAD
 from typing import Optional, List, Any
+=======
+from typing import Optional, List
+>>>>>>> origin/main
 from datetime import datetime
 
 # ==========================================
@@ -9,6 +13,7 @@ from datetime import datetime
 # This is v1. Note: A breaking change is coming at 11:00 AM!
 
 class UnifiedDocument(BaseModel):
+<<<<<<< HEAD
     """
     Unified Schema v1 for multi-source ingestion.
     Supports PDF, Transcript, HTML, CSV, and Legacy Code.
@@ -33,3 +38,16 @@ class UnifiedDocument(BaseModel):
                 "source_metadata": {"tables_found": 2}
             }
         }
+=======
+    # TODO: Define the v1 schema. 
+    # Suggested fields: document_id, content, source_type, author, timestamp, metadata
+    
+    document_id: str
+    content: str
+    source_type: str # e.g., 'PDF', 'Video', 'HTML', 'CSV', 'Code'
+    author: Optional[str] = "Unknown"
+    timestamp: Optional[datetime] = None
+    
+    # You might want a dict for source-specific metadata
+    source_metadata: dict = Field(default_factory=dict)
+>>>>>>> origin/main

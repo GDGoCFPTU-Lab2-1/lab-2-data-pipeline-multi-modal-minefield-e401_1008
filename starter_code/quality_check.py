@@ -4,6 +4,7 @@
 # Task: Implement quality gates to reject corrupt data or logic discrepancies.
 
 def run_quality_gate(document_dict):
+<<<<<<< HEAD
     # Support both dictionary and Pydantic model
     if hasattr(document_dict, "model_dump"):
         doc = document_dict.model_dump()
@@ -43,4 +44,12 @@ def run_quality_gate(document_dict):
             document_dict.source_metadata["flagged_discrepancy"] = True
     
     # Return True if pass, False if fail.
+=======
+    # TODO: Reject documents with 'content' length < 20 characters
+    # TODO: Reject documents containing toxic/error strings (e.g., 'Null pointer exception')
+    # TODO: Flag discrepancies (e.g., if tax calculation comment says 8% but code says 10%)
+    
+    # Return True if pass, False if fail.
+    
+>>>>>>> origin/main
     return True
